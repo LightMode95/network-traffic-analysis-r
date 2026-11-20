@@ -135,14 +135,6 @@ Tip: save plots with `ggsave("outputs/time_series.png", width = 10, height = 6)`
 - **Map paths:** verify that the polylines connect each source to its own destination rather than forming one continuous path across all rows.
 - **Notebook option:** `options(repr.plot.width = 10, repr.plot.height = 6)` only affects Jupyter/IRkernel notebooks, not RStudio.
 
-## Possible Improvements
-
-- Replace random data with real packet captures or public network datasets
-- Detect anomalies (for example unusually large transfers or traffic spikes)
-- Use a GeoIP lookup for real locations
-- Add protocol and port fields and analyze by service
-- Build an interactive dashboard with Shiny
-
 ## Documentation
 
 A detailed Excel workbook is included in `docs/`. It contains an overview, line-by-line code explanations, a data dictionary, a functions glossary and notes.
@@ -153,7 +145,4 @@ The original code and concept come from the GeeksforGeeks article *Network Traff
 https://www.geeksforgeeks.org/r-machine-learning/network-traffic-analysis-visualization-in-r/
 
 This repository reorganizes the code, adds documentation and notes limitations. Please credit the original source if you reuse it.
-
-## License
-
-Add a license of your choice (for example MIT) via a `LICENSE` file.
+.
