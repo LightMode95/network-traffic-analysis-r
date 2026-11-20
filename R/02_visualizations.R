@@ -108,7 +108,7 @@ traffic_data$destination_latitude   <- runif(n = num_records, min = -90,  max = 
 traffic_data$destination_longitude  <- runif(n = num_records, min = -180, max = 180)
 
 traffic_map <- leaflet(data = traffic_data) %>%
-  addTiles() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
   addCircleMarkers(~source_longitude, ~source_latitude, radius = 5,
                    color = "blue", fillOpacity = 0.5,
                    label = ~paste("Source:", source_ip)) %>%
@@ -119,7 +119,7 @@ traffic_map <- leaflet(data = traffic_data) %>%
 # One separate line per record (source -> its own destination).
 # Passing c(...) over the whole data frame would join every point
 # into a single path, so we add the lines row by row instead.
-for (i in seq_len(num_records)) {
+for (i in sample(num_records, 100)) {
   traffic_map <- addPolylines(
     traffic_map,
     lng = c(traffic_data$source_longitude[i], traffic_data$destination_longitude[i]),
